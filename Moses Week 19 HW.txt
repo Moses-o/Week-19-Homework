@@ -1,0 +1,27 @@
+week 19 homework
+
+Part 1: Windows Server Attack Log
+1.
+For universal mitigation, there could be a "whitelist" for IP addresses that are authorized for access. On top of whitelisting the IPs, there should be a multi-factor
+authentication added for extra security.
+
+	The first user to have an excess in signatures is user k. With user_k, the signature "An attempt was made to reset an accounts password" came up 2,021 times
+compared to the account being locked out 11 times. This leads to a conclusion that the account lockout should be extended per suggested amount of login 
+failures considering a 183 attempts to one lockout seems generous for anyone attempting to brute force.
+	User_a's account has 1,694 counts of the account being locked out. This suggests that the password is very strong, but for extra security measures
+other adjustments can be made to user_a's login such as the account name.
+	For user_j, the alarming signature was the 302 count of successful logins. This would suggest that the password was easily cracked and the account has
+already been comprimised. User_j should create a more complex password or even be subjected to consistent and frequent password changes.
+	
+2.
+The most ideal solution would be to track and blacklist the IP address of the malicious actor. This would alleviate the issues of the endpoint users by 
+solving the problem from the very source.
+
+Part 2: Apache Webserver Attack Log
+1.
+	The traffic is all located in Ukraine so it would be best to block incoming traffic from the country.
+
+2.
+	The first determining field I resorted to was user_agent. With the majority of traffic coming through 'Mozilla/4.0', it would be wise to block the
+incoming traffic from specified field. Second field that was a potential target under the 'root' field. Since the files are the likely target, VSI should 
+consider whitelisting specified IPs targetting the files.
